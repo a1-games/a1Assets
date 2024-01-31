@@ -16,6 +16,7 @@ public class IndieAd_3D_Material : MonoBehaviour, IIndieAd
 
     public void SetTexture(Texture2D myTexture)
     {
+        meshRenderer.materials[0].color = Color.white;
         meshRenderer.materials[0].mainTexture = myTexture;
     }
 

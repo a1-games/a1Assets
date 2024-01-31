@@ -19,6 +19,7 @@ public class IndieAd_UI_Image : MonoBehaviour, IIndieAd
 
     public void SetTexture(Texture2D myTexture)
     {
+        image.color = Color.white;
         image.sprite = Sprite.Create((Texture2D)myTexture, new Rect(0.0f, 0.0f, myTexture.width, myTexture.height), new Vector2(0.5f, 0.5f));
     }
 
