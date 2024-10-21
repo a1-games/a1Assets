@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -29,7 +30,23 @@ public class LanguageManager : MonoBehaviour
 
     public void SetLanguageFromInspector(string language)
     {
-        SaveSelectedLanguage((SupportedLanguages)Enum.Parse(typeof(SupportedLanguages), language));
+        var testt = CultureInfo.CurrentCulture.EnglishName;
+        // skift til cultureinfo i stedet for custom enum???
+
+        Debug.Log(testt);
+
+        SupportedLanguages supLang = (SupportedLanguages)Enum.Parse(typeof(SupportedLanguages), language);
+        if (supLang == null)
+        {
+
+        }
+
+        SaveSelectedLanguage(supLang);
+        languageSelectPanel.SetActive(false);
+    }
+    public void SetLanguageFromInspector(int languageIndex)
+    {
+        SaveSelectedLanguage((SupportedLanguages)languageIndex);
         languageSelectPanel.SetActive(false);
     }
 
