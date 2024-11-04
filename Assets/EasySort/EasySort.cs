@@ -1,8 +1,6 @@
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
 using EasySort_Hidden;
-using static UnityEditor.Progress;
 
 public enum SortingMethod
 {
