@@ -30,6 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
+  m_sendNavigationEvents: 0
   m_DragThreshold: 10
 --- !u!114 &8822185708758919427
 MonoBehaviour:
@@ -61,8 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: e5777967b97b6f64781c54074f915820, type: 3}
   m_PointAction: {fileID: 195648819140143216, guid: e5777967b97b6f64781c54074f915820, type: 3}
   m_MoveAction: {fileID: 4752226186683490315, guid: e5777967b97b6f64781c54074f915820, type: 3}
@@ -76,6 +79,7 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 4518990554143458750, guid: e5777967b97b6f64781c54074f915820, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!114 &8822185708758919487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +95,7 @@ MonoBehaviour:
   _dontDestroy: 0
   _debugComments: 0
   _cursorBehaviour: 0
-  <ControllerMouseSpeed>k__BackingField: 10
+  <ControllerMouseDefaultSpeed>k__BackingField: 10
   <TimeBeforeStopMovingStick>k__BackingField: 0.01
   <StickDriftThreshhold>k__BackingField: 0.05
   OnStartedCursorMove_WithController:
@@ -207,7 +211,7 @@ MonoBehaviour:
     m_ActionId: 385345e1-dfae-4831-9bb4-c2420ace1298
     m_ActionName: Mouse Simulation With Controller1/Mouse Click Simulation
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: GameControls
   m_DefaultActionMap: Mouse Simulation With Controller
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

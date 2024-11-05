@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventSystem_ControllerMouse
       objectReference: {fileID: 0}
+    - target: {fileID: 8822185708758919484, guid: 884f3ad4b7ac42b48a44d25a9580929b, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: GameControls
+      objectReference: {fileID: 0}
     - target: {fileID: 8822185708758919485, guid: 884f3ad4b7ac42b48a44d25a9580929b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -413,6 +417,14 @@ PrefabInstance:
     - target: {fileID: 2535445741100963330, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 266
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581794422321549021, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581794422321549021, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4304686204459947666, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
       propertyPath: _bindingID
@@ -542,6 +554,14 @@ PrefabInstance:
       propertyPath: m_text
       value: D-Pad Up/D-Pad Left/D-Pad Down/D-Pad Right
       objectReference: {fileID: 0}
+    - target: {fileID: 6127075724463705524, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
+      propertyPath: m_MaxValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127075724463705524, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
+      propertyPath: m_MinValue
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6655517960335577379, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
       propertyPath: _bindingID
       value: 2aea57f4-483e-4559-af23-a5c94b8f4133
@@ -565,6 +585,18 @@ PrefabInstance:
     - target: {fileID: 7148677004337266192, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
       propertyPath: m_text
       value: R2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560112393962164900, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560112393962164900, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560112393962164900, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7976735233569951165, guid: 3357927906fbcbb4ca80d6552b758ab2, type: 3}
       propertyPath: m_Name
