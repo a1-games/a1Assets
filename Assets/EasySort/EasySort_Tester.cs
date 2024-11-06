@@ -13,7 +13,7 @@ public class EasySort_Tester : MonoBehaviour
 
         Debug.Log(thing);
 
-        var nextThing = Casino.GetOneOfWeightedItems(new Casino.WeightedItem<float>(23, 5555f), new Casino.WeightedItem<float>(93, 9999f)
+        var nextThing = Casino.GetOneOfWeightedItems(new WeightedItem<float>(23, 5555f), new WeightedItem<float>(93, 9999f)
             );
 
         Debug.Log(nextThing);
