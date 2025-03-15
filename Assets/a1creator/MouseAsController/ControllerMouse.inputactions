@@ -1,5 +1,5 @@
 {
-    "name": "GameControls",
+    "name": "ControllerMouse",
     "maps": [
         {
             "name": "UI With Mouse",
@@ -11,7 +11,8 @@
                     "id": "9cacedf1-1584-446c-8ec4-25198d15ac3d",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Submit",
@@ -19,7 +20,8 @@
                     "id": "165acf33-7529-490e-8247-454a9ba946bb",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Cancel",
@@ -27,7 +29,8 @@
                     "id": "c2a8fba3-cd03-48d5-8651-bc9fcff83cf5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Point",
@@ -35,7 +38,8 @@
                     "id": "b77247f6-d2c3-4583-bf58-ccf7d8289e85",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Click",
@@ -43,7 +47,8 @@
                     "id": "4cc9b118-f8f6-4abd-b166-76bf79e160ad",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "ScrollWheel",
@@ -51,7 +56,8 @@
                     "id": "48f94997-f5f9-4250-acc5-f222abbacf7a",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "MiddleClick",
@@ -59,7 +65,8 @@
                     "id": "fca98f70-105a-477b-b2ba-5b0536e5197a",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "RightClick",
@@ -67,7 +74,8 @@
                     "id": "606c5f66-4b04-4c68-9ec3-72b68240d717",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "TrackedDevicePosition",
@@ -75,7 +83,8 @@
                     "id": "2ae12f6f-87ce-4764-8907-7715bd99d125",
                     "expectedControlType": "Vector3",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "TrackedDeviceOrientation",
@@ -83,7 +92,8 @@
                     "id": "d2141730-e855-4340-bdb1-d388f2cce385",
                     "expectedControlType": "Quaternion",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -506,15 +516,35 @@
                     "id": "4f843ec8-fd5a-4b90-9636-6367a85cb26d",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "Mouse Click Simulation",
-                    "type": "PassThrough",
+                    "name": "Left Mouse Click Simulation",
+                    "type": "Button",
                     "id": "385345e1-dfae-4831-9bb4-c2420ace1298",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Right Mouse Click Simulation",
+                    "type": "Button",
+                    "id": "9d2534a4-cd7e-43e9-97e5-136c2092a74d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Middle Mouse Click Simulation",
+                    "type": "Button",
+                    "id": "71c7cb95-0432-473b-983d-674b80145df4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -591,18 +621,62 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "GameControls",
-                    "action": "Mouse Click Simulation",
+                    "action": "Left Mouse Click Simulation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "2aea57f4-483e-4559-af23-a5c94b8f4133",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GameControls",
+                    "action": "Left Mouse Click Simulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7fca6ecb-510a-4383-b5d3-1856de461453",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GameControls",
+                    "action": "Right Mouse Click Simulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b412b9af-2136-4ad9-b0c2-a5eae42d69ff",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "GameControls",
-                    "action": "Mouse Click Simulation",
+                    "action": "Right Mouse Click Simulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f03f9212-0284-4f19-994c-0a7507a3cef3",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GameControls",
+                    "action": "Middle Mouse Click Simulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "df9f6d5c-07cd-41a8-b8ec-1c67414734a2",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GameControls",
+                    "action": "Middle Mouse Click Simulation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

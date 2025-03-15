@@ -97,7 +97,7 @@ MonoBehaviour:
   _cursorBehaviour: 0
   <ControllerMouseDefaultSpeed>k__BackingField: 10
   <TimeBeforeStopMovingStick>k__BackingField: 0.01
-  <StickDriftThreshhold>k__BackingField: 0.05
+  <StickDriftThreshold>k__BackingField: 0.05
   OnStartedCursorMove_WithController:
     m_PersistentCalls:
       m_Calls: []
@@ -111,6 +111,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnLeftClickUp_WithController:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRightClickDown_WithController:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRightClickUp_WithController:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMiddleClickDown_WithController:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMiddleClickUp_WithController:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8822185708758919484
@@ -210,6 +222,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 385345e1-dfae-4831-9bb4-c2420ace1298
     m_ActionName: Mouse Simulation With Controller1/Mouse Click Simulation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8822185708758919487}
+        m_TargetAssemblyTypeName: ControllerMouse, Assembly-CSharp
+        m_MethodName: OnRightClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9d2534a4-cd7e-43e9-97e5-136c2092a74d
+    m_ActionName: Mouse Simulation With Controller/Right Mouse Click Simulation[/DualShock4GamepadHID/buttonEast,/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8822185708758919487}
+        m_TargetAssemblyTypeName: ControllerMouse, Assembly-CSharp
+        m_MethodName: OnMiddleClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 71c7cb95-0432-473b-983d-674b80145df4
+    m_ActionName: Mouse Simulation With Controller/Middle Mouse Click Simulation[/DualShock4GamepadHID/buttonNorth,/DualShock4GamepadHID/rightStickPress]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: GameControls
   m_DefaultActionMap: Mouse Simulation With Controller
