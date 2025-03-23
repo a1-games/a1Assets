@@ -3,10 +3,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-#if UNITY_EDITOR
 
 namespace a1creator
 {
+    #if UNITY_EDITOR
     [CustomEditor(typeof(ControllerMouse))]
     [CanEditMultipleObjects]
     public class CustomInspectorControllerMouse : Editor
