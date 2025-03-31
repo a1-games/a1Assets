@@ -1441,7 +1441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4385733757677599963, guid: d383d5d4d45bc6e43a85a32078652f99, type: 3}
       propertyPath: m_text
-      value: Right Click Primary
+      value: Middle Click Primary
       objectReference: {fileID: 0}
     - target: {fileID: 4552668241233771870, guid: d383d5d4d45bc6e43a85a32078652f99, type: 3}
       propertyPath: m_Pivot.x
@@ -2183,11 +2183,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4270253456531582604, guid: d383d5d4d45bc6e43a85a32078652f99, type: 3}
       propertyPath: m_Name
-      value: Rebind Right Click Secondary (1)
+      value: Rebind Middle Click Secondary
       objectReference: {fileID: 0}
     - target: {fileID: 4385733757677599963, guid: d383d5d4d45bc6e43a85a32078652f99, type: 3}
       propertyPath: m_text
-      value: Right Click Secondary
+      value: Middle Click Secondary
       objectReference: {fileID: 0}
     - target: {fileID: 4552668241233771870, guid: d383d5d4d45bc6e43a85a32078652f99, type: 3}
       propertyPath: m_Pivot.x
