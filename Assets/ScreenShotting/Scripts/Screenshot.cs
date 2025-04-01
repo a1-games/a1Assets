@@ -135,22 +135,22 @@ public class Screenshot : MonoBehaviour
         {
             var name = fileNames[i];
             var expectedName = defaultScreenshotName + "_" + (i+1);
-            //print("expnam " + expectedName + "filnam " + name);
 
             // if the expectedName isn't taken already, take it.
-            if (name != expectedName)
+            if (name.ToLower() != expectedName.ToLower())
             {
                 highestUnusedScreenshotNr = i + 1;
                 return expectedName;
             }
         }
-        // we expect not to reach the following code unless all screnshot names are taken:
+        // we expect not to reach the following code unless all screenshot names are taken:
         // in case we didn't find a usable expectedName, we know the highest unsaved is length + 1
         highestUnusedScreenshotNr = filesInScreenShotsFolder.Length + 1;
         return defaultScreenshotName + "_" + highestUnusedScreenshotNr;
 
     }
 
+    // This is definitely stolen from somewhere but I forgot it. I would give credit if I knew! :(
     public class NumericOrderComparer : IComparer<string>
     {
         public int Compare(string x, string y)
