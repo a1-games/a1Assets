@@ -16,17 +16,9 @@ namespace EasySort_Hidden
     public static class EasySort_Numbers
     {
 
-
-
         public static List<byte> Sort(List<byte> items, SortingMethod sortingMethod)
         {
-            byte[] arrayItems = Sort(items.ToArray(), sortingMethod);
-            List<byte> result = new List<byte>();
-            for (int i = 0; i < arrayItems.Length; i++)
-            {
-                result.Add(arrayItems[i]);
-            }
-            return result;
+            return new List<byte>(Sort(items.ToArray(), sortingMethod));
         }
         public static byte[] Sort(byte[] items, SortingMethod sortingMethod)
         {
@@ -42,13 +34,7 @@ namespace EasySort_Hidden
 
         public static List<short> Sort(List<short> items, SortingMethod sortingMethod)
         {
-            short[] arrayItems = Sort(items.ToArray(), sortingMethod);
-            List<short> result = new List<short>();
-            for (int i = 0; i < arrayItems.Length; i++)
-            {
-                result.Add(arrayItems[i]);
-            }
-            return result;
+            return new List<short>(Sort(items.ToArray(), sortingMethod));
         }
         public static short[] Sort(short[] items, SortingMethod sortingMethod)
         {
@@ -63,13 +49,7 @@ namespace EasySort_Hidden
         }
         public static List<int> Sort(List<int> items, SortingMethod sortingMethod)
         {
-            int[] arrayItems = Sort(items.ToArray(), sortingMethod);
-            List<int> result = new List<int>();
-            for (int i = 0; i < arrayItems.Length; i++)
-            {
-                result.Add(arrayItems[i]);
-            }
-            return result;
+            return new List<int>(Sort(items.ToArray(), sortingMethod));
         }
         public static int[] Sort(int[] items, SortingMethod sortingMethod)
         {
@@ -84,13 +64,7 @@ namespace EasySort_Hidden
         }
         public static List<long> Sort(List<long> items, SortingMethod sortingMethod)
         {
-            long[] arrayItems = Sort(items.ToArray(), sortingMethod);
-            List<long> result = new List<long>();
-            for (int i = 0; i < arrayItems.Length; i++)
-            {
-                result.Add(arrayItems[i]);
-            }
-            return result;
+            return new List<long>(Sort(items.ToArray(), sortingMethod));
         }
         public static long[] Sort(long[] items, SortingMethod sortingMethod)
         {
@@ -107,13 +81,7 @@ namespace EasySort_Hidden
 
         public static List<decimal> Sort(List<decimal> items, SortingMethod sortingMethod)
         {
-            decimal[] arrayItems = Sort(items.ToArray(), sortingMethod);
-            List<decimal> result = new List<decimal>();
-            for (int i = 0; i < arrayItems.Length; i++)
-            {
-                result.Add(arrayItems[i]);
-            }
-            return result;
+            return new List<decimal>(Sort(items.ToArray(), sortingMethod));
         }
         public static decimal[] Sort(decimal[] items, SortingMethod sortingMethod)
         {
@@ -129,13 +97,7 @@ namespace EasySort_Hidden
 
         public static List<float> Sort(List<float> items, SortingMethod sortingMethod)
         {
-            float[] arrayItems = Sort(items.ToArray(), sortingMethod);
-            List<float> result = new List<float>();
-            for (int i = 0; i < arrayItems.Length; i++)
-            {
-                result.Add(arrayItems[i]);
-            }
-            return result;
+            return new List<float>(Sort(items.ToArray(), sortingMethod));
         }
         public static float[] Sort(float[] items, SortingMethod sortingMethod)
         {
@@ -151,13 +113,7 @@ namespace EasySort_Hidden
 
         public static List<double> Sort(List<double> items, SortingMethod sortingMethod)
         {
-            double[] arrayItems = Sort(items.ToArray(), sortingMethod);
-            List<double> result = new List<double>();
-            for (int i = 0; i < arrayItems.Length; i++)
-            {
-                result.Add(arrayItems[i]);
-            }
-            return result;
+            return new List<double>(Sort(items.ToArray(), sortingMethod));
         }
         public static double[] Sort(double[] items, SortingMethod sortingMethod)
         {
