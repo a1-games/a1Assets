@@ -213,15 +213,17 @@ namespace a1creator
                 instance.gameObject.SetActive(false);
                 instance.gameObject.SetActive(true);
             }
+            Application.targetFrameRate = 150;
         }
 
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (IsRebinding) return;
+
             if (stoppedMovingStick)
             {
-                stoppedMovingStickTimer += Time.unscaledDeltaTime;
+                stoppedMovingStickTimer += Time.fixedUnscaledDeltaTime;
                 if (stoppedMovingStickTimer >= TimeBeforeStopMovingStick)
                 {
                     stoppedMovingStick = false;
@@ -237,7 +239,7 @@ namespace a1creator
             if (isMovingControllerMouse)
             {
                 // This is Windows cursor. it triggers all events as a mouse would
-                var mouseTravel = mouseDirection * ControllerMouseDefaultSpeed * ControllerMouseSpeedMultiplier * Time.unscaledDeltaTime * 100f;
+                var mouseTravel = mouseDirection * ControllerMouseDefaultSpeed * ControllerMouseSpeedMultiplier * Time.fixedUnscaledDeltaTime * 100f;
                 MouseOperations.MouseMoveEvent(new MouseOperations.MousePoint((int)mouseTravel.x, -(int)mouseTravel.y));
             }
         }
