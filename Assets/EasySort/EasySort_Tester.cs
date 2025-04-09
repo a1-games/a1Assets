@@ -8,15 +8,30 @@ public class EasySort_Tester : MonoBehaviour
     void Start()
     {
 
+        var strings = new List<string>()
+        {
+            "asd",
+            "dsa",
+            "XXXXXXXAAAA",
+            "abcABC",
+            "martin",
+            "abcZebra",
+        };
 
-        var thing = Casino.GetOneOfItems(2, 6, 7);
+        print("---");
+        for (int i = 0; i < strings.Count; i++)
+        {
+            print(strings[i]);
+        }
 
-        Debug.Log(thing);
 
-        var nextThing = Casino.GetOneOfWeightedItems(new WeightedItem<float>(23, 5555f), new WeightedItem<float>(93, 9999f)
-            );
+        var sortedstrings = EasySort.Sort(strings, StringSortBy.String_Length_Smallest_First);
 
-        Debug.Log(nextThing);
+        print("---");
+        for (int i = 0; i < sortedstrings.Count; i++)
+        {
+            print(sortedstrings[i]);
+        }
 
     }
 

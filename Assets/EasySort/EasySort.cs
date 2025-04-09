@@ -17,8 +17,10 @@ public enum SortingMethod
 
 public enum StringSortBy
 {
-    Alphabetic_A_First,
-    Alphabetic_A_Last,
+    Alphabetic_A_First_Natural,
+    Alphabetic_A_Last_Natural,
+    Alphabetic_A_First_Ignore_Numbers,
+    Alphabetic_A_Last_Ignore_Numbers,
     String_Length_Smallest_First,
     String_Length_Smallest_Last,
 }

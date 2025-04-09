@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -60,7 +60,10 @@ namespace a1creator
 
             if (GUILayout.Button("Take Screenshot (Only in playmode)", GUILayout.Height(50)))
             {
-                script.TakeScreenshot();
+                if (Application.isPlaying)
+                    script.TakeScreenshot();
+                else
+                    Debug.LogWarning("You need to be in playmode to take a screenshot.");
             }
 
             EditorGUILayout.Separator();
@@ -116,8 +119,6 @@ namespace a1creator
 
         // had to put this here bc unity is confusing but it is only related to the custom editor scipt, don't touch
         [SerializeField] public bool hideDeveloperTools = false;
-
-        private int highestUnusedScreenshotNr = 0;
 
         public List<Texture2D> GetAllScreenshots()
         {
@@ -194,56 +195,32 @@ namespace a1creator
 
         private string GetAvailableFileName()
         {
-            // get all file names to compare
+            // Get all file names to compare
             var filesInScreenShotsFolder = Resources.LoadAll(screenshotsFoldername);
-            var fileNames = new string[filesInScreenShotsFolder.Length];
-            for (int i = 0; i < fileNames.Length; i++)
-            {
-                fileNames[i] = filesInScreenShotsFolder[i].name;
-            }
-            Array.Sort(fileNames, new NumericOrderComparer());
+            // HashSet allows you to check if a number exists using Contains() in O(1) time instead of O(n). 
+            var takenNumbers = new HashSet<int>();
+            // Escape ensures you have have characters normally used by regex in the default name. Could be.,^\ idk
+            var regex = new Regex("^" + Regex.Escape(defaultScreenshotName) + @"_(\d+)$", RegexOptions.IgnoreCase);
 
-            // iterate through all files from first to last
-            for (int i = highestUnusedScreenshotNr; i < fileNames.Length; i++)
+            foreach (var file in filesInScreenShotsFolder)
             {
-                var name = fileNames[i];
-                var expectedName = defaultScreenshotName + "_" + (i + 1);
-
-                // if the expectedName isn't taken already, take it.
-                if (name.ToLower() != expectedName.ToLower())
+                var match = regex.Match(file.name);
+                if (match.Success && int.TryParse(match.Groups[1].Value, out int number))
                 {
-                    highestUnusedScreenshotNr = i + 1;
-                    return expectedName;
+                    takenNumbers.Add(number);
                 }
             }
-            // we expect not to reach the following code unless all screenshot names are taken:
-            // in case we didn't find a usable expectedName, we know the highest unsaved is length + 1
-            highestUnusedScreenshotNr = filesInScreenShotsFolder.Length + 1;
-            return defaultScreenshotName + "_" + highestUnusedScreenshotNr;
 
-        }
-
-        // This is definitely stolen from somewhere but I forgot it. I would give credit if I knew! :(
-        public class NumericOrderComparer : IComparer<string>
-        {
-            public int Compare(string x, string y)
+            // Start from 1 until there is a gap in the numbers or we reach the top
+            int candidate = 1;
+            while (takenNumbers.Contains(candidate))
             {
-                var regex = new Regex("^(d+)");
-
-                // run the regex on both strings
-                var xRegexResult = regex.Match(x);
-                var yRegexResult = regex.Match(y);
-
-                // check if they are both numbers
-                if (xRegexResult.Success && yRegexResult.Success)
-                {
-                    return int.Parse(xRegexResult.Groups[1].Value).CompareTo(int.Parse(yRegexResult.Groups[1].Value));
-                }
-
-                // otherwise return as string comparison
-                return x.CompareTo(y);
+                candidate++;
             }
+
+            return defaultScreenshotName + "_" + candidate;
         }
+
     }
 
 }
