@@ -1,4 +1,6 @@
+
 using System.Collections;
+using System.Generic.Collections;
 using UnityEngine.Networking;
 using UnityEngine;
 using System.Net.Http;
@@ -31,28 +33,59 @@ public struct FolderNames
     }
 }
 
-public interface IIndieAd
-{
-    public void SetTexture(Texture2D texture);
-    public void SetURL(string url);
-    public AdResolutions Resolution { get; set; }
-    public bool FetchLink { get; set; }
-}
 
-// https://noblesteedgames.com/blog/a-handy-guide-to-graphical-assets-on-your-steam-store-page/
-public enum AdResolutions
-{
-    // Standard mobile banner size
-    Banner_320x50 = 0,
-    // These you will already have if you release on steam
-    Landscape_231x87 = 1,
-    Landscape_460x215 = 2,
-    Landscape_616x353 = 3,
-    Portrait_374x448 = 4,
-    Portrait_600x900 = 5,
-}
+
+
 public class a1_IndieAds : MonoBehaviour
 {
+
+
+    // Either try fastly first, then akamai
+    // Fastly is better in europe and america, akamai has better global coverage
+    // or:
+    // Decide which links use which providers
+    public enum AdImageProvider
+    {
+        fastly,
+        akamai,
+    }
+    // https://noblesteedgames.com/blog/a-handy-guide-to-graphical-assets-on-your-steam-store-page/
+    public enum AdImageName
+    {
+        // Small capsule
+        capsule_184x69,
+        capsule_231x87,
+        // 331x155
+        header
+    
+        // Big capsule
+        capsule_616x353,
+        capsule_767x433,
+
+        // Big banner
+        capsule_920x430 = 0,
+        capsule_748x896 = 1,
+
+
+        Landscape_460x215 = 2,
+        Portrait_374x448 = 4,
+        capsule_600x900 = 5,
+    }
+
+    // This doesnt work because appID has to be passed from the very top.
+    // Use it as an example to do it correctly
+    private readonly Dictionary<AdImageName, string> ImageLinks = new Dictionary<AdImageName, string>()
+    {
+        { AdImageName.capsule_184x69, GetImageLink(AdImageProvider.fastly, "appID", AdImageName.capsule_184x69) }
+        { AdImageName.header, GetImageLink(AdImageProvider.akamai, "appID", AdImageName.header) }
+    };
+
+    private string GetImageLink(AdImageProvider provider, string appID, AdImageName imageName)
+    {
+        return $"shared.{provider}.steamstatic.com/store_item_assets/steam/apps/{appID}/{imageName}";
+    }
+
+
     private AdResolution[] resolutions = new AdResolution[]
     {
         new AdResolution (320, 50),
@@ -155,7 +188,7 @@ public class a1_IndieAds : MonoBehaviour
     // GetTexture() can only be called on main thread, so this has to be a coroutine
     private IEnumerator SetSpriteTexture(UnityAction<Texture2D> setTexture, AdResolution res, string folder)
     {
-        UnityWebRequest www = UnityWebRequestTexture.GetTexture($"https://indieads.github.io/stnemesitrevda/{folder}/{res.width}x{res.height}.png");
+        UnityWebRequest www = UnityWebRequestTexture.GetTexture($"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/{appid}/capsule_{res.width}x{res.height}.jpg");
 
 
         //print(www.uri);
