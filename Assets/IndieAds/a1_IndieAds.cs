@@ -69,6 +69,7 @@ public class a1_IndieAds : MonoBehaviour
     [SerializeField] private float secondsBetweenAdRefresh = 0f;
     [Header("Write your game name to avoid it displaying ads for itself\nAll lowercase, no spaces. Example: \"spacevoyage\"")]
     [SerializeField] private string myGame = "gametitle";
+    // Use ID instead of name. using name makes no sense
     [Header("Write the ID of this game to avoid it displaying ads for itself")]
     [SerializeField] private string myGameID = "1234567";
 
