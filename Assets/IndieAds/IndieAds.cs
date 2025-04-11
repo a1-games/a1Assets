@@ -92,7 +92,7 @@ public class IndieAds : MonoBehaviour
     private Coroutine RefreshRoutine { get; set; }
     private System.Random Rnd { get; set; }
 
-    private async void Awake()
+    private async void Start()
     {
         Rnd = new System.Random();
 
