@@ -137,14 +137,14 @@ public static class EasySort
 
     #region STRINGS
 
-    public static List<string> Sort(List<string> items, StringSortBy stringSortBy, SortingMethod sortingMethod = SortingMethod.AutoSelect)
-    {
-        return EasySort_Strings.Sort(items, stringSortBy, GetSortingMethod(items.Count, sortingMethod));
-    }
-    public static string[] Sort(string[] items, StringSortBy stringSortBy, SortingMethod sortingMethod = SortingMethod.AutoSelect)
-    {
-        return EasySort_Strings.Sort(items, stringSortBy, GetSortingMethod(items.Length, sortingMethod));
-    }
+    //public static List<string> Sort(List<string> items, StringSortBy stringSortBy, SortingMethod sortingMethod = SortingMethod.AutoSelect)
+    //{
+    //    return EasySort_Strings.Sort(items, stringSortBy, GetSortingMethod(items.Count, sortingMethod));
+    //}
+    //public static string[] Sort(string[] items, StringSortBy stringSortBy, SortingMethod sortingMethod = SortingMethod.AutoSelect)
+    //{
+    //    return EasySort_Strings.Sort(items, stringSortBy, GetSortingMethod(items.Length, sortingMethod));
+    //}
 
 
     #endregion

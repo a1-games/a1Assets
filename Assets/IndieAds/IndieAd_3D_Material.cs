@@ -24,7 +24,7 @@ public class IndieAd_3D_Material : MonoBehaviour, IIndieAd
     {
         meshRenderer = GetComponent<MeshRenderer>();
 
-        a1_IndieAds.SubmitIndieAd(this);
+        IndieAds.SubmitIndieAd(this);
     }
 
     public void SetURL(string url)

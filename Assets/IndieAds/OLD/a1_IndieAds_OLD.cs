@@ -31,36 +31,21 @@ public struct FolderNames
     }
 }
 
-public interface IIndieAd
-{
-    public void SetTexture(Texture2D texture);
-    public void SetURL(string url);
-    public AdResolutions Resolution { get; set; }
-    public bool FetchLink { get; set; }
-}
 
-// https://noblesteedgames.com/blog/a-handy-guide-to-graphical-assets-on-your-steam-store-page/
-public enum AdResolutions
-{
-    // Standard mobile banner size
-    Banner_320x50 = 0,
-    // These you will already have if you release on steam
-    Landscape_231x87 = 1,
-    Landscape_460x215 = 2,
-    Landscape_616x353 = 3,
-    Portrait_374x448 = 4,
-    Portrait_600x900 = 5,
-}
-public class a1_IndieAds : MonoBehaviour
+public class a1_IndieAds_OLD : MonoBehaviour
 {
     private AdResolution[] resolutions = new AdResolution[]
     {
-        new AdResolution (320, 50),
+        //new AdResolution (320, 50),
+        new AdResolution (184, 69),
         new AdResolution (231, 87),
-        new AdResolution (460, 215),
+        new AdResolution (331, 155),
+        //new AdResolution (460, 215),
         new AdResolution (616, 353),
-        new AdResolution (374, 448),
+        //new AdResolution (374, 448),
         new AdResolution (600, 900),
+        new AdResolution (1920, 620),
+        new AdResolution (640, 360),
     };
 
 
@@ -69,9 +54,6 @@ public class a1_IndieAds : MonoBehaviour
     [SerializeField] private float secondsBetweenAdRefresh = 0f;
     [Header("Write your game name to avoid it displaying ads for itself\nAll lowercase, no spaces. Example: \"spacevoyage\"")]
     [SerializeField] private string myGame = "gametitle";
-    // Use ID instead of name. using name makes no sense
-    [Header("Write the ID of this game to avoid it displaying ads for itself")]
-    [SerializeField] private string myGameID = "1234567";
 
     private Coroutine refreshRoutine;
 

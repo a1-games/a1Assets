@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7285532796701490154}
   - component: {fileID: 7285532796701490155}
   m_Layer: 5
-  m_Name: Ad_231x87
+  m_Name: Ad_331x155
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 231, y: 87}
+  m_SizeDelta: {x: 331, y: 155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5781126523962936945
 MonoBehaviour:
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7cba238abf6b74bb9056347a9b1cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 1
+  resolution: 2
   button: {fileID: 0}
 --- !u!114 &7285532796701490154
 MonoBehaviour:

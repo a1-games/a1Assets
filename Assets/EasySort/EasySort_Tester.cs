@@ -25,13 +25,13 @@ public class EasySort_Tester : MonoBehaviour
         }
 
 
-        var sortedstrings = EasySort.Sort(strings, StringSortBy.String_Length_Smallest_First);
+        //var sortedstrings = EasySort.Sort(strings, StringSortBy.String_Length_Smallest_First);
 
-        print("---");
-        for (int i = 0; i < sortedstrings.Count; i++)
-        {
-            print(sortedstrings[i]);
-        }
+        //print("---");
+        //for (int i = 0; i < sortedstrings.Count; i++)
+        //{
+        //    print(sortedstrings[i]);
+        //}
 
     }
 

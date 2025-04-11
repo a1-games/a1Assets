@@ -27,7 +27,7 @@ public class IndieAd_UI_Image : MonoBehaviour, IIndieAd
     {
         image = GetComponent<Image>();
 
-        a1_IndieAds.SubmitIndieAd(this);
+        IndieAds.SubmitIndieAd(this);
     }
 
     public void SetURL(string url)
