@@ -1,0 +1,24 @@
+
+///
+These are the things that will be improved over the next update(s)
+I leave this in here on purpose for the curious people
+///
+
+
+
+
+
+
+
+- Make playmode draw happen every x seconds instead of every frame
+
+
+- Make gizmo draw a thing when not in play mode
+  (right now checking colliders outside play mode is not allowed)
+
+
+- Add capsule collider
+
+- Add mesh collider
+
+- Possibly terrain collider. maybe not necessary. only upon request.
