@@ -92,7 +92,7 @@ namespace a1creator
         {
             _isShowing = visible;
             if (!visible)
-                StopCoroutine(_rescanRoutine);
+                KillRescanRoutine();
         }
 
         // --- Logic ---
@@ -108,10 +108,15 @@ namespace a1creator
             {
                 // Force reload once
                 _cachedColliders = Physics.OverlapSphere(ScanCenter.position, ScanRadius);
-                if (_rescanRoutine != null)
-                    StopCoroutine(_rescanRoutine);
+                KillRescanRoutine();
                 _rescanRoutine = StartCoroutine(RescanRoutine());
             }
+        }
+        
+        private void KillRescanRoutine()
+        {
+            if (_rescanRoutine != null)
+                StopCoroutine(_rescanRoutine);
         }
 
         private IEnumerator RescanRoutine()

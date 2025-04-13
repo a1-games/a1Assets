@@ -66,8 +66,8 @@ namespace a1creator
             if (EditorApplication.isPlaying && GUILayout.Button(script._isShowing ? "Stop Showing Colliders" : "Show All Colliders", GUILayout.Height(50)))
             {
                 script.ShowAllColliders(!script._isShowing);
-                if (script._isShowing)
-                    Debug.Log("Is showing all colliders");
+                //if (script._isShowing)
+                //    Debug.Log("Is showing all colliders");
             }
             GUI.color = Color.white; // Reset to default
 

@@ -23,20 +23,37 @@ namespace a1creator
             {
                 float distFromLoadPoint = 0f;
                 if (VeryLargeMap)
-                    distFromLoadPoint = Vector3.Distance(ScanCenter.position, center);
+                {
+                    if (ScanCenter != null)
+                        distFromLoadPoint = Vector3.Distance(ScanCenter.position, center);
+                    else
+                    {
+                        Debug.LogWarning("No ScanCenter attached in VisualizeColliders");
+                        distFromLoadPoint = Vector3.Distance(transform.position, center);
+                    }
+                }
                 else
                 {
                     if (_gameCam != null)
                         distFromLoadPoint = Vector3.Distance(_gameCam.transform.position, center);
                     else
+                    {
+                        Debug.LogWarning("No Game Camera attached in VisualizeColliders");
                         distFromLoadPoint = Vector3.Distance(transform.position, center);
+                    }
                 }
 
-                // For each 50 units, lose one edgepoint. Going negative is safe (will not draw anything).
-                for (int i = 50; i < distFromLoadPoint; i++)
+                // The scaleFactor makes all spheres visually about the same size gizmos.
+                // A circle w. r0.5 will be drawn the same as a r22 circle that is far enough away to appear as small as the r0.5 circle
+                float scaleFactor = Mathf.Pow(radius, 1.1f);
+                float distanceInterval = _settings.DistancePerSphereEdgeReduction * scaleFactor;
+                float firstDistance = _settings.DistancePerSphereEdgeReduction * 2f * scaleFactor;
+
+                // For each *distanceInterval* units after *firstDistance* units, lose one edgepoint. Going negative is safe (will not draw anything).
+                for (float i = firstDistance; i < distFromLoadPoint; i+= distanceInterval)
                 {
                     latitudeCount--;
-                    latitudeCount--;
+                    longitudeCount--;
                 }
             }
 

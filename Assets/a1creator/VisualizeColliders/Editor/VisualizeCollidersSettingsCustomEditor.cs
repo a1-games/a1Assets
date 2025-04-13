@@ -20,7 +20,7 @@ namespace a1creator
 
             EditorGUILayout.LabelField("[ Settings ]", EditorStyles.boldLabel);
 
-            EditorGUILayout.HelpBox(" Settings can be updated realtime. ", MessageType.Info);
+            EditorGUILayout.HelpBox(" Settings can be updated realtime.\n Values persist between playmode and editor. ", MessageType.Info);
 
 
             // --------------------------------------------------------------------------

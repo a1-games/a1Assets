@@ -23,8 +23,8 @@ namespace a1creator
         [field: SerializeField] public bool SphereLines_Vertical { get; set; } = true;
         [field: SerializeField] public bool SphereLines_Diagonal { get; set; } = true;
 
-        [field: SerializeField] public int SphereEdges { get; set; } = 10;
-        [field: SerializeField] public float DistancePerSphereEdgeReduction { get; set; } = 50f;
+        [field: SerializeField] public int SphereEdges { get; set; } = 8;
+        [field: SerializeField] public float DistancePerSphereEdgeReduction { get; set; } = 8f;
         [field: SerializeField] public bool ReduceSphereEdgesByDistance { get; set; } = true;
 
 
