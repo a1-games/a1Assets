@@ -43,8 +43,9 @@ namespace a1creator
                     }
                 }
 
-                // The scaleFactor makes all spheres visually about the same size gizmos.
-                // A circle w. r0.5 will be drawn the same as a r22 circle that is far enough away to appear as small as the r0.5 circle
+                // The scaleFactor makes all spheres visually about the same sized gizmos.
+                // A circle w. r0.5 will be drawn the same as a r22 circle that is far enough away to appear as small as the r0.5 circle.
+                // It's not exact, because I'm not good enough at math to know how to calculate that, but it's close enough to not bother me.
                 float scaleFactor = Mathf.Pow(radius, 1.1f);
                 float distanceInterval = _settings.DistancePerSphereEdgeReduction * scaleFactor;
                 float firstDistance = _settings.DistancePerSphereEdgeReduction * 2f * scaleFactor;
@@ -114,19 +115,18 @@ namespace a1creator
             Vector3 center = boxCollider.transform.position;
             Vector3 scale = boxCollider.transform.lossyScale;
             Quaternion rotation = boxCollider.transform.rotation;
-
             Vector3 halfExtents = boxCollider.size * 0.5f;
 
             Vector3[] corners = new Vector3[8]
             {
-            new Vector3(-halfExtents.x, -halfExtents.y, -halfExtents.z),
-            new Vector3(halfExtents.x, -halfExtents.y, -halfExtents.z),
-            new Vector3(halfExtents.x, -halfExtents.y, halfExtents.z),
-            new Vector3(-halfExtents.x, -halfExtents.y, halfExtents.z),
-            new Vector3(-halfExtents.x, halfExtents.y, -halfExtents.z),
-            new Vector3(halfExtents.x, halfExtents.y, -halfExtents.z),
-            new Vector3(halfExtents.x, halfExtents.y, halfExtents.z),
-            new Vector3(-halfExtents.x, halfExtents.y, halfExtents.z)
+                new Vector3(-halfExtents.x, -halfExtents.y, -halfExtents.z),
+                new Vector3(halfExtents.x, -halfExtents.y, -halfExtents.z),
+                new Vector3(halfExtents.x, -halfExtents.y, halfExtents.z),
+                new Vector3(-halfExtents.x, -halfExtents.y, halfExtents.z),
+                new Vector3(-halfExtents.x, halfExtents.y, -halfExtents.z),
+                new Vector3(halfExtents.x, halfExtents.y, -halfExtents.z),
+                new Vector3(halfExtents.x, halfExtents.y, halfExtents.z),
+                new Vector3(-halfExtents.x, halfExtents.y, halfExtents.z)
             };
 
             // Rotate the corners based on the collider's rotation and move them to the world space
